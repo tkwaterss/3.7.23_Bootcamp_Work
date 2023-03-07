@@ -3,7 +3,7 @@
 //////////////////////
 
 // 1) -------------------------------------------------------
-let numbers = [0,1,2,3,4,5,6,7,8,9]
+// let numbers = [0,1,2,3,4,5,6,7,8,9]
 
 function printNumbers(numbers) {
     for (let i = 0; i < numbers.length; i++) {
@@ -12,10 +12,10 @@ function printNumbers(numbers) {
   }
   
 // Q: Given an array of numbers, what is the time complexity of this function?
-// ANSWER:
+// ANSWER: O(n)
 
 // Q: What is the space complexity?
-// ANSWER:
+// ANSWER: O(1)
 
 
 
@@ -27,6 +27,7 @@ function findFourth(numbers) {
     var count = 1
     var answer = 0
   
+    //even though the for loop runs for length of array, the conditional always exits at the 4th element.
     for (let i = 0; i < numbers.length; i++) {
         if (count === 4) {
             answer = numbers[i]
@@ -38,14 +39,17 @@ function findFourth(numbers) {
   }
 
 // Q: What is the time complexity of of this solution?
-// ANSWER:
+// ANSWER: O(1)
 
 // Q: Given an array of numbers, what is the space complexity of this function?
-// ANSWER:
+// ANSWER: O(1)
 
 
 // Q: Could you come up with a solution that has a better time complexity? If so, write out that solution and note the time complexity. If not, why not?
 // ANSWER:
+function findFour(arr) {
+  return arr[3];
+}
 
 
 // 3) -------------------------------------------------------
@@ -55,67 +59,67 @@ function printA() {
     }
 }
 // Q: What is the time complexity of this function?
-// ANSWER:
+// ANSWER: O(1)
 
 // Q: What is the space complexity of this function?
-// ANSWER:
+// ANSWER: O(1)
 
 // 4) -------------------------------------------------------
 function printB(number) {
-  for (let i = 0; i < number; i++) {
+  for (let i = 0; i < number; i++) { // n
     console.log(i)
   }
 }
 // Q: What is the time complexity of this function?
-// ANSWER:
+// ANSWER: O(n)
 
 // Q: What is the space complexity of this function?
-// ANSWER:
+// ANSWER: O(n)
 
 
 
 // 5) -------------------------------------------------------
 function printC(num, arr) {
-  for (let i = 0; i < num; i++) {
-    for (let j = 0; j < arr.length; j++) {
-      console.log(j)
+  for (let i = 0; i < num; i++) { //n
+    for (let j = 0; j < arr.length; j++) { //n
+      console.log(j) //1
     }
   }
 }
 // Q: What is the time complexity of this function?
-// ANSWER:
+// ANSWER: O(n(n))
 
 // Q: What is the space complexity of this function?
-// ANSWER:
+// ANSWER: O(n(n))
 
 
 // 6) -------------------------------------------------------
 function nested(numbers) {
-    for (let i = 0; i < numbers.length; i++) {
-      for (let j = 0; j < numbers.length; j++) {
+    for (let i = 0; i < numbers.length; i++) { //n
+      for (let j = 0; j < numbers.length; j++) { //n
         console.log(j)
       }
     }
   }
 // Q: What is the time complexity of this function?
-// ANSWER:
+// ANSWER: O(n(n))
 
 // Q: What is the space complexity of this function?
-// ANSWER:
+// ANSWER: O(n(n))
 
 
 
 // 7) -------------------------------------------------------
-// let numbers = [76,35,73,13,4,88,23,12,86,1,54,9,10,2]
+let numbers = [76,35,73,13,4,88,23,12,86,1,54,9,10,2]
 // remember numbers could be reassigned, added to, etc.
-let newNumbersA = numbers.filter((num) => {
-  return num < 5
+let newNumbersA = numbers.filter((num) => { //n
+  return num < 5 //1
 })
 // Q: What is the time complexity of the filter higher-order function?
-// ANSWER:
+// ANSWER: O(n)
 
 // Q: What is the space complexity of the filter higher-order function?
-// ANSWER:
+// ANSWER: O(n)
 
 
 // 8) -------------------------------------------------------
@@ -124,10 +128,10 @@ let newNumbersB = numbers.map((num) => {
   return num * 3
 })
 // Q: What is the time complexity of the map higher-order function?
-// ANSWER:
+// ANSWER: O(n)
 
 // Q: What is the space complexity of the map higher-order function?
-// ANSWER:
+// ANSWER: O(n)
 
 
 
@@ -139,10 +143,10 @@ let newNumbersB = numbers.map((num) => {
 
 // 9) -------------------------------------------------------
 function removeNum() {
-    numbers.splice(3,1)
+    numbers.splice(3,1) // 1
 }
 // Q: What is the time complexity of the function?
-// ANSWER:
+// ANSWER: O(n)
 
 
 // 10) -------------------------------------------------------
@@ -150,7 +154,7 @@ function insertNum() {
     numbers.splice(3, 0, 19)
 }
 // Q: What is the time complexity of the function?
-// ANSWER:
+// ANSWER: O(1)
 
 
 // 11) -------------------------------------------------------
@@ -158,7 +162,7 @@ function pushNum() {
     numbers.push(25)
 }
 // Q: What is the time complexity of the function?
-// ANSWER:
+// ANSWER: O(1)
 
 
 // 12) -------------------------------------------------------
@@ -169,7 +173,7 @@ function printFirstTwoNames(array) {
 }
 
 // Q: What is the time complexity of the function? 
-// ANSWER:
+// ANSWER: O(1)
 
 
 
@@ -194,7 +198,7 @@ function arrInception(parentArr) {
     }
   }
   // Q: What is the space complexity of this function?
-  // ANSWER:
+  // ANSWER: O(1)
   
   
 // 14) You are challenged to find the squared value of each number in an array. This is not the best solution, but it is what you come up with anyway...
@@ -212,11 +216,12 @@ function getNumbersSquared(numbers) {
 }
 
 // Q: What is the space complexity of this function?
-// ANSWER:
+// ANSWER: O(n)
 
 
 // Q: Is it possible to improve this function's space complexity? If it is, write a new function below.
-// ANSWER:
+// ANSWER: No, it will always return an array of the same size as the input (proportional)
+//output is proportional to input
 
 
 // 15) Here are two functions that you came up with to count how many of each letter is in a given string and return an object with the individual counts: 
@@ -262,7 +267,7 @@ function countLetters(str) {
 
 return letters
 }
-
+//O(1)
 /////////////////////////////
 
 function countLettersRoundTwo(str) {
@@ -278,16 +283,20 @@ function countLettersRoundTwo(str) {
   }
   return letters
 }
+//O(n)
 
 
 // Q: Do these functions have the same space complexity?
-// ANSWER:
+// ANSWER: No
 
 
 // Q: What is the space complexity of each? 
-// ANSWER - countLetters:
-// ANSWER - countLettersRoundTwo:
+// ANSWER - countLetters: O(1)
+// ANSWER - countLettersRoundTwo: O(log n)
 
 
 // Q: Explain how you came to your conclusions about the space complexity of each function. 
-// ANSWER: 
+// ANSWER:  
+// The first will always return an object of the same size regardless of the input.
+// The second will return an object increasing in complexity up to a certain point that it hits all 26 letters
+
